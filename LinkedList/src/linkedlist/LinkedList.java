@@ -115,6 +115,24 @@ public class LinkedList {
        return false;
     }
     
+    public boolean insert(int index, int value)  {
+        if (index < 0 || index > lenght) return false;
+        if (index == 0) {
+            prepend(value);
+            return true;
+        }
+        if (index == lenght) {
+            append(value);
+            return true;
+        }
+        Node newNode = new Node(value);
+        Node temp = get(index - 1);
+        newNode.next = temp.next;
+        temp.next = newNode;
+        lenght++;
+        return true;
+    }
+    
     public static void main(String[] args) {
        LinkedList myLinkedList = new LinkedList(4);
        myLinkedList.append(2);
