@@ -25,3 +25,5 @@ replay_pid*
 
 # .DS_Store de Mac
 *.DS_Store
+/LinkedList/nbproject/private/
+/LinkedList/build/
