@@ -133,10 +133,38 @@ public class LinkedList {
         return true;
     }
     
+    public Node remove(int index){
+        if(index < 0 || index >=lenght)return null;
+        if(index == 0) return removeFirst();
+        if(index == lenght-1) return removeLast();
+        Node prev = get(index -1);
+        Node temp = prev.next;
+        
+        prev.next = temp.next;
+        temp.next = null;
+        lenght--;
+        return temp;
+    }
+    
+    public void reverse(){
+        Node temp = head;
+        head =tail;
+        tail = temp;
+        Node after = temp.next;
+        Node before = null;
+        for(int i = 0; i<lenght;i++){
+            after = temp.next;
+            temp.next = before;
+            before  = temp;
+            temp = after;
+        }
+    }
+    
     public static void main(String[] args) {
        LinkedList myLinkedList = new LinkedList(4);
        myLinkedList.append(2);
-       myLinkedList.append(2);
+       myLinkedList.append(7);
+       myLinkedList.append(23);
        myLinkedList.prepend(66);
        myLinkedList.prepend(33);
        
@@ -148,6 +176,10 @@ public class LinkedList {
        System.out.println(myLinkedList.removeFirst().value);
        System.out.println(myLinkedList.get(1).value);
         System.out.println(myLinkedList.set(1,-1));
+        System.out.println(myLinkedList.remove(2).value);
+        myLinkedList.reverse();
+        System.out.println("reverse:");
+        myLinkedList.printList();
         
     }
     
