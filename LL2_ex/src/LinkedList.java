@@ -6,22 +6,17 @@
 /**
  *
  * @author edgargarcia
+ * 
+ * LL: Has Loop ( ** Interview Question)
+Implement a method called hasLoop that checks whether the list contains a loop or not.
+
+If the list contains a loop, the method should return true; otherwise, it should return false.
  */
-
-
-
-/*
-LL: Find Middle Node ( ** Interview Question)
-Implement a method called findMiddleNode that returns the middle node of the linked list.
-
-If the list has an even number of nodes, the method should return the second middle node.
-*/
-
-
 public class LinkedList {
 
     private Node head;
     private Node tail;
+    private int length;
 
     class Node {
         int value;
@@ -36,6 +31,7 @@ public class LinkedList {
         Node newNode = new Node(value);
         head = newNode;
         tail = newNode;
+        length = 1;
     }
 
     public Node getHead() {
@@ -44,6 +40,10 @@ public class LinkedList {
 
     public Node getTail() {
         return tail;
+    }
+
+    public int getLength() {
+        return length;
     }
 
     public void printList() {
@@ -55,15 +55,16 @@ public class LinkedList {
     }
 
     public void printAll() {
-        if (head == null) {
+        if (length == 0) {
             System.out.println("Head: null");
             System.out.println("Tail: null");
         } else {
             System.out.println("Head: " + head.value);
             System.out.println("Tail: " + tail.value);
         }
+        System.out.println("Length:" + length);
         System.out.println("\nLinked List:");
-        if (head == null) {
+        if (length == 0) {
             System.out.println("empty");
         } else {
             printList();
@@ -73,43 +74,43 @@ public class LinkedList {
     public void makeEmpty() {
         head = null;
         tail = null;
+        length = 0;
     }
 
     public void append(int value) {
         Node newNode = new Node(value);
-        if (head == null) {
+        if (length == 0) {
             head = newNode;
             tail = newNode;
         } else {
             tail.next = newNode;
             tail = newNode;
         }
+        length++;
     }
 
-	// WRITE FIND MIDDLE NODE METHOD HERE //
+	// WRITE HASLOOP METHOD HERE //
 /*
-Note:
+    Note:
 
-In this problem, you should use the slow and fast pointer technique (also known as Floyd's Tortoise and Hare algorithm) to find the middle element of the linked list efficiently.
+In this problem, you should use the slow and fast pointer technique (also known as Floyd's Tortoise and Hare algorithm) to efficiently detect 
+    the presence of a loop in the linked list.
+    */
+	public boolean hasLoop(){
+	     Node slowPointer = head,
+             fastPointer = head;
+ 
+        while (slowPointer != null
+               && fastPointer != null
+               && fastPointer.next != null) {
+            slowPointer = slowPointer.next;
+            fastPointer = fastPointer.next.next;
+            if (slowPointer == fastPointer)
+                return true;
+        }
+ 
+    return false;
+	}
 
-The key idea is to have two pointers, one that moves twice as fast as the other. By the time the fast pointer reaches the end of the linked list, the slow pointer will be at the middle.
-
-
-
-DO NOT use the length attribute in your solution.    
-*/
-public Node findMiddleNode(){
-    
-    Node slow = head;
-    Node fast = head;
-    while(slow != null
-               && fast != null
-               && fast.next != null){
-        slow = slow.next;
-        fast = fast.next.next;
-    }
-    return slow;
 }
-}
-
 
