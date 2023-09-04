@@ -27,3 +27,5 @@ replay_pid*
 *.DS_Store
 /LinkedList/nbproject/private/
 /LinkedList/build/
+/LL_EX1/nbproject/private/
+/LL_EX1/build/
