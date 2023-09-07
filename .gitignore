@@ -33,3 +33,5 @@ replay_pid*
 /LL2_ex/build/
 /DLL/nbproject/private/
 /DLL/build/
+/PalindromeChecker/nbproject/private/
+/PalindromeChecker/build/
