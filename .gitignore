@@ -41,3 +41,5 @@ replay_pid*
 /Stack/build/
 /Queue/nbproject/private/
 /Queue/build/
+/LLFindKthNode/nbproject/private/
+/LLFindKthNode/build/
