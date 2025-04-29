@@ -1,32 +1,28 @@
 package estaticos;
 
 
-
 import java.util.Scanner;
-
 
 
 public class arrayClase {
 
-    int arr[];
+    int[] arr;
 
     int num;
 
     int i = 0;
 
 
+    public arrayClase(int num) {
 
-    public arrayClase(int num){
-
-        this.num=num;
+        this.num = num;
 
         this.arr = new int[num];
 
     }
 
 
-
-    public void guardarDatos(){
+    public void guardarDatos() {
 
         Scanner scanner = new Scanner(System.in);
 
@@ -34,42 +30,40 @@ public class arrayClase {
 
         System.out.println("Ingresa los numeros:");
 
-        for(i= 0; i<num; i++){
+        for (i = 0; i < num; i++) {
 
-            arr[i]=scanner.nextInt();
+            arr[i] = scanner.nextInt();
 
         }
 
     }
 
 
-
-    public void imprimirDatos(){
+    public void imprimirDatos() {
 
         System.out.println("*****************************************");
 
         System.out.println("Los datos existentes en el arreglos son:");
 
-        for(i=0;i<num;i++){
+        for (i = 0; i < num; i++) {
 
-            int pos= i+1;
+            int pos = i + 1;
 
-            System.out.println("["+pos+"]: "+arr[i]);
+            System.out.println("[" + pos + "]: " + arr[i]);
 
         }
 
 
-
     }
 
-    public int[] getArr(){
+    public int[] getArr() {
         return this.arr;
     }
 
-    public int busquedaLinear(int arr[], int tam, int val ){
+    public int busquedaLinear(int[] arr, int tam, int val) {
         int res = -1;
-        for(i =0; i<tam;i++){
-            if(val == arr[i]){
+        for (i = 0; i < tam; i++) {
+            if (val == arr[i]) {
                 res = i;
                 return res;
             }
@@ -77,7 +71,7 @@ public class arrayClase {
         return res;
     }
 
-    public void heapify(int arr[], int n, int i) {
+    public void heapify(int[] arr, int n, int i) {
 
         // Initialize largest as root
         int largest = i;
@@ -110,7 +104,7 @@ public class arrayClase {
     }
 
     // Main function to do heap sort
-    public int[] heapSort(int arr[]) {
+    public int[] heapSort(int[] arr) {
         int n = arr.length;
 
         // Build heap (rearrange array)

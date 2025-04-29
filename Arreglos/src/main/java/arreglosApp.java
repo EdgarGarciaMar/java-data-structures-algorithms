@@ -1,4 +1,5 @@
 import estaticos.arrayClase;
+
 import java.util.Scanner;
 
 public class arreglosApp {
@@ -9,7 +10,7 @@ public class arreglosApp {
         int tam = scanner.nextInt();
         arrayClase a = new arrayClase(tam);
         a.guardarDatos();
-        while(true) {
+        while (true) {
             System.out.println("+++++++++++++++++++++++++++++++++++++++++++");
             System.out.println("Seleccione una de las siguientes opciones: ");
             System.out.println("1: Imprimir datos\n" +
@@ -17,7 +18,7 @@ public class arreglosApp {
                     "3: Heap sort\n" +
                     "4: Salir\n");
             System.out.println("Introduce tu selección:");
-            int op =scanner.nextInt();
+            int op = scanner.nextInt();
             switch (op) {
                 case 1:
                     a.imprimirDatos();
