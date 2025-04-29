@@ -62,6 +62,20 @@ public class arrayClase {
 
     }
 
+    public int[] getArr(){
+        return this.arr;
+    }
+
+    public int busquedaLinear(int arr[], int tam, int val ){
+        int res = -1;
+        for(i =0; i<tam;i++){
+            if(val == arr[i]){
+                res = i;
+                return res;
+            }
+        }
+        return res;
+    }
 
 
 }
