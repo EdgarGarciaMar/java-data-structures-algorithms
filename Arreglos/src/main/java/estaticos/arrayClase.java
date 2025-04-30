@@ -3,16 +3,21 @@ package estaticos;
 
 import java.util.Scanner;
 
-
+/**
+ * Clase de arreglos con numeros enteros.
+ */
 public class arrayClase {
-
+    /** Arreglo de enteros. **/
     int[] arr;
-
+    /** Variable de tamaño del arreglo. **/
     int num;
-
+    /** Variable iterador global. **/
     int i = 0;
 
-
+    /**
+     * Constructor de la clase.
+     * @param num tamaño del arr.
+     */
     public arrayClase(int num) {
 
         this.num = num;
@@ -21,7 +26,9 @@ public class arrayClase {
 
     }
 
-
+    /**
+     * Metodo para leer y guardar los datos.
+     */
     public void guardarDatos() {
 
         Scanner scanner = new Scanner(System.in);
@@ -38,7 +45,9 @@ public class arrayClase {
 
     }
 
-
+    /**
+     * Metodo para imprimir en consola los datos.
+     */
     public void imprimirDatos() {
 
         System.out.println("*****************************************");
@@ -56,10 +65,21 @@ public class arrayClase {
 
     }
 
+    /**
+     * Metodo para retornar el arreglo.
+     * @return arr.
+     */
     public int[] getArr() {
         return this.arr;
     }
 
+    /**
+     * Metodo para buscar linearmente un numero en el arreglo.
+     * @param arr arreglo de enteros.
+     * @param tam tamaño del arreglo.
+     * @param val valor a buscar en el arreglo.
+     * @return posicion del val en el arreglo o -1 si no esta.
+     */
     public int busquedaLinear(int[] arr, int tam, int val) {
         int res = -1;
         for (i = 0; i < tam; i++) {
@@ -71,6 +91,12 @@ public class arrayClase {
         return res;
     }
 
+    /**
+     * Metodo de ordenamiento heap.
+     * @param arr arreglo de enteros.
+     * @param n tamaño del arr.
+     * @param i iterador.
+     */
     public void heapify(int[] arr, int n, int i) {
 
         // Initialize largest as root
@@ -103,7 +129,11 @@ public class arrayClase {
         }
     }
 
-    // Main function to do heap sort
+    /**
+     * Metodo principal del ordenamiento heap
+     * @param arr arreglo de enteros.
+     * @return arreglo ordenado.
+     */
     public int[] heapSort(int[] arr) {
         int n = arr.length;
 
