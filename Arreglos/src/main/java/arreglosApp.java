@@ -16,7 +16,8 @@ public class arreglosApp {
             System.out.println("1: Imprimir datos\n" +
                     "2: Busqueda linear\n" +
                     "3: Heap sort\n" +
-                    "4: Salir\n");
+                    "4: Busqueda binaria\n" +
+                    "5: Salir\n");
             System.out.println("Introduce tu selección:");
             int op = scanner.nextInt();
             switch (op) {
@@ -39,6 +40,20 @@ public class arreglosApp {
                     a.imprimirDatos();
                     break;
                 case 4:
+                    System.out.println("Ingresa el número a buscar:");
+                    int x = scanner.nextInt();
+                    a.heapSort(a.getArr());
+                    System.out.println("---Arreglo ordenado----");
+                    a.imprimirDatos();
+                    int resBinary = a.binarySearch(a.getArr(),x);
+                    if(resBinary == -1) {
+                        System.out.println("No se encontro el valor");
+                    }else {
+                        resBinary+=1;
+                        System.out.println("El numero "+x+" Se encontro en la pos: "+resBinary);
+                    }
+                    break;
+                case 5:
                     return;
                 default:
                     System.out.println("tralalero tralala");
