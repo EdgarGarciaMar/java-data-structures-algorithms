@@ -17,7 +17,8 @@ public class arreglosApp {
                     "2: Busqueda linear\n" +
                     "3: Heap sort\n" +
                     "4: Busqueda binaria\n" +
-                    "5: Salir\n");
+                    "5: Agregar valor\n" +
+                    "6: Salir\n");
             System.out.println("Introduce tu selección:");
             int op = scanner.nextInt();
             switch (op) {
@@ -54,6 +55,14 @@ public class arreglosApp {
                     }
                     break;
                 case 5:
+                    System.out.println("Ingresa la posicón del arreglo:");
+                    int pos = scanner.nextInt();
+                    System.out.println("Ingresa el nuevo valor:");
+                    int newVal= scanner.nextInt();
+                    a.agregarValor(pos,newVal);
+                    a.imprimirDatos();
+                break;
+                case 6:
                     return;
                 default:
                     System.out.println("tralalero tralala");

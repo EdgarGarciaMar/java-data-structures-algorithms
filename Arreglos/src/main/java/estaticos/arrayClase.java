@@ -186,5 +186,10 @@ public class arrayClase {
         return -1;
     }
 
+    public void agregarValor(int pos,int newVal){
+        int aux = this.arr[pos];
+        this.arr[pos]=newVal;
+        System.out.println("El valor "+aux+" fue remplazado por "+newVal+" en la pos "+pos);
+    }
 
 }
