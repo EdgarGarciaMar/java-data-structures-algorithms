@@ -3,7 +3,9 @@ package estaticos;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
+import java.io.PrintStream;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -51,4 +53,54 @@ class arrayTest {
 
         assertEquals(expectedOutput, out.toString());
     }
+    @Test
+    void testBusquedaLinearIsInArr(){
+        arrayClase arrTest = new arrayClase(2);
+        arrTest.arr[0] = 5;
+        arrTest.arr[1] = 15;
+        int res = arrTest.busquedaLinear(arrTest.getArr(),arrTest.getArr().length,5);
+
+        assertEquals(0, res);
+    }
+    @Test
+    void testBusquedaLinearIsNotInArr(){
+        arrayClase arrTest = new arrayClase(2);
+        arrTest.arr[0] = 5;
+        arrTest.arr[1] = 15;
+        int res = arrTest.busquedaLinear(arrTest.getArr(),arrTest.getArr().length,3);
+
+        assertEquals(-1, res);
+    }
+    @Test
+    void heapAsendenteTest() {
+        arrayClase arrTest = new arrayClase(3);
+        arrTest.arr[0] = 50;
+        arrTest.arr[1] = 1;
+        arrTest.arr[2] = 149;
+        int[] arrResult = {1, 50, 149};
+
+        assertArrayEquals(arrResult,arrTest.heapSort(arrTest.getArr()));
+    }
+    @Test
+    void busquedaBinaria(){
+        arrayClase arrTest = new arrayClase(3);
+        arrTest.arr[0] = 50;
+        arrTest.arr[1] = 149;
+        arrTest.arr[2] = 142;
+        int resBusquedaBinaria =arrTest.binarySearch(arrTest.getArr(),149);
+
+        assertEquals(1,resBusquedaBinaria);
+    }
+
+    @Test
+    void busquedaBinariaIsNotInArray(){
+        arrayClase arrTest = new arrayClase(3);
+        arrTest.arr[0] = 50;
+        arrTest.arr[1] = 149;
+        arrTest.arr[2] = 142;
+        int resBusquedaBinaria =arrTest.binarySearch(arrTest.getArr(),5);
+
+        assertEquals(-1,resBusquedaBinaria);
+    }
+
 }
