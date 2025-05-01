@@ -1,5 +1,7 @@
+import dinamicos.arrayDinamico;
 import estaticos.arrayClase;
 
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class arreglosApp {
@@ -18,7 +20,8 @@ public class arreglosApp {
                     "3: Heap sort\n" +
                     "4: Busqueda binaria\n" +
                     "5: Agregar valor\n" +
-                    "6: Salir\n");
+                    "6: Arreglos dinamicos\n" +
+                    "7: Salir\n");
             System.out.println("Introduce tu selección:");
             int op = scanner.nextInt();
             switch (op) {
@@ -62,7 +65,19 @@ public class arreglosApp {
                     a.agregarValor(pos,newVal);
                     a.imprimirDatos();
                 break;
-                case 6:
+                case 6: //El arreglo dinamico consiste en incrementar al doble el tamaño del arreglo con cada insert
+                    arrayDinamico newDinamico = new arrayDinamico(tam);
+                    System.out.println("Ingresa los datos:");
+                    newDinamico.insertDinamico(1);
+                    newDinamico.insertDinamico(2);
+                    newDinamico.insertDinamico(3);
+                    newDinamico.insertDinamico(4);
+                    newDinamico.insertDinamico(5);
+                    newDinamico.insertDinamico(6);
+                    newDinamico.printArrayDinamico();
+
+                break;
+                case 7:
                     return;
                 default:
                     System.out.println("tralalero tralala");
